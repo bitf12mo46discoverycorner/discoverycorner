@@ -1,0 +1,152 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    
+
+    <meta name="viewport" content="width=device-width" />
+    <title>Home</title>
+    <!-- Start WOWSlider.com HEAD section -->
+    <link rel="stylesheet" type="text/css" href="~/engine1/style.css" />
+    <script type="text/javascript" src="~/engine1/jquery.js"></script>
+    <!-- End WOWSlider.com HEAD section -->
+
+    <style>
+        body {
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-image: url(../../images/murree1.jpg);
+            background-attachment: fixed;
+            background-size: contain;
+        }
+    </style>
+
+
+</head>
+<body >
+
+    <div style="height:200%">
+      
+
+        <!-- Trigger the modal with a button -->
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Login To see New Tour</h4>
+                    </div>
+                    <form action="/ContectUs/login" method="post" role="form">
+                        <div class="modal-body">
+                            <p>Welcome to Zaid Javed's Website</p>
+                            <input type="text" class="form-control" name="email" placeholder="xyz@example.com" required>
+                            <input type="password" class="form-control" required name="password">
+                        </div>
+                        <div class="modal-footer">
+                            <input type="submit" class="btn btn-default" value="login" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    <!--<div style="background-image: url(../../images/map.jpg)"><img style=" width:100%;height:300px " src="~/images/map.jpg" /></div> -->
+        <!--
+    <nav class="navbar navbar-fixed-bottom " style="background-color:transparent; margin-bottom:1.5%;;opacity:04">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <div class=""></div>
+                <a class="navbar-brand navbar-fixed-top" style="margin-left:2% ; margin-top:3%" href="Index"><h1>Discovery Corner</h1></a>
+            </div>
+            <div style="text-emphasis-color:white;text-decoration-color:blue;font-family:'Bauhaus 93';font-size:26px">
+                <ul class="nav navbar-nav">
+
+                    <li class="active"><a href="~/Home/Index">Home</a></li>
+                    <li><a href="~/Home/Tour">Tour</a></li>
+                    <li><a href="PreviousTour">Previous Tour</a></li>
+                    <li><a href="~/Home/ContectUs">Contect Me</a></li>
+                    <li><a href="~/Home/AboutUs">About Me</a></li>
+                    <li><a href="~/Home/SignUp">Sign Up</a> </li>
+                </ul>
+            </div>
+        </div>
+
+    </nav>
+        -->
+
+        <nav class="navbar navbar-btn navbar-fixed-bottom" >
+            <div class="container-fluid" >
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" style="background-color:lightblue;opacity:0.5;" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a style="font-size:26px;text-shadow:3px 3px 2px #fafafa ;font-style:italic;font-family:'Bauhaus 93'" class="navbar-brand" href="~/Home/Index">Discovery Corner</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav" style="text-shadow:3px 2px 2px #000000">
+                        <li><a class="hvr-bounce-to-bottom" href="~/Home/Index">Home <span class="sr-only">(current)</span></a></li>
+                        <li><a class=" hvr-bounce-to-left" href=" ~/Tour/Tour">Tour<span class="icon-bar"></span></a></li>
+                        <li><a class=" hvr-bounce-to-right" href=" ~/Tour/PreviousTour">Previous Tour<span class="icon-bar"></span></a></li>
+                        <li><a class="hvr-bounce-to-left"  href="~/ContectUs/ContectUs">Contact me<span class="icon-bar"></span></a></li>
+                        <li><a class=" hvr-bounce-to-top hvr-bounce-to-right" href="~/Home/gallery"><i style="color:#2bbded" class="fa fa-lg fa-connectdevelop"></i> Gallery<span class="icon-bar"></span></a></li>
+                        <li><a class=" hvr-bounce-to-right" href="~/Home/AboutUs">About me<span class="icon-bar"></span></a></li>
+                        <li><a class=" hvr-bounce-to-bottom" href="~/SignUp/SignUp">Sign up<span class="sr-only"></span></a></li>
+                        @Html.Partial("~/Views/Shared/_loginLogout.cshtml");
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <!--<li><a href="#">any link</a></li>-->
+                        <!--drop down list-->
+                        <!--
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                        </ul>
+                    </li>
+                    -->
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+        <div>
+            <div class="fixed " style="margin-top:4%; margin-left:30%;width:30%;background-color:whitesmoke;opacity:0.9">
+                <form action="" method="post" role="form" >
+                    <div class="modal-body">
+                        <p style="font-size:30px;font-family:'Bauhaus 93'">Welcome to Zaid Javed's Website  <br />
+                        Please Login First to Proceed</p>
+                       
+                    </div>
+                  
+                </form>
+            </div>
+           
+
+
+        </div>
+
+
+   
+    </div>
+
+</body>
+</html>

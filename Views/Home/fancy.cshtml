@@ -1,0 +1,86 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <!--Fancy box CSS-->
+    <link href="~/Content/fancy%20box/fancy%20box%20CSS/jquery.fancybox.css" rel="stylesheet" />
+    <link href="~/Content/fancy%20box/fancy%20box%20CSS/jquery.fancybox-thumbs.css" rel="stylesheet" />
+    <link href="~/Content/fancy%20box/fancy%20box%20CSS/jquery.fancybox-buttons.css" rel="stylesheet" />
+   
+    @Html.Partial("~/Views/Shared/_AllLinks.cshtml")
+    <meta name="viewport" content="width=device-width" />
+    <title>fancy</title>
+</head>
+<body>
+    <a class="fancybox" href="~/images/1_b.jpg" data-fancybox-group="gallery" title="Etiam quis mi eu elit temp">
+        <img src="~/images/1_s.jpg" />
+    </a>
+    <a class="fancybox thumbnail" data-fancybox-group="gallery" title="Zaid Javed 46" href="/images/2_b.jpg">
+        <img src="~/images/2_s.jpg" />
+    </a>
+
+
+
+
+
+    @Html.Partial("~/Views/Shared/_fancyJS.cshtml")
+
+
+
+
+
+
+    <br /><br />
+    <div class="container-fluid row">
+
+        <div class="col-lg-1"></div>
+
+        <div class="list-group col-lg-5">
+
+            <a href="https://goo.gl/maps/cXqTp " target="_blank" class="list-group-item active">
+                <h4 class="list-group-item-heading" style="font-family: Hobo Std; font-weight:bolder; align-content:center">By: <b>Arsman Ahmad</b></h4>
+                <blockquote>
+                    <p class="list-group-item-text" style="color:white">Student - Bachelors in Information & Technology - <b>University of the Punjab</b>, Lahore, Pakistan</p>
+
+                </blockquote>
+            </a>
+
+            <a href="http://www.pucit.edu.pk" target="_blank" class="list-group-item">
+                <h4 class="list-group-item-heading" style="font-family: Hobo Std; font-weight:bolder; ">Address:</h4>
+                <blockquote>
+                    <p class="list-group-item-text">Punjab University College of Information Technology - PUCIT Lahore, Pakistan</p>
+                </blockquote>
+            </a>
+            <a href=" mailto:arsman.ahmad@gmail.com" class=" list-group-item">
+                <h4 class="list-group-item-heading" style="font-family: Hobo Std; font-weight:bolder; ">Email:</h4>
+                <blockquote>
+                    <p class="list-group-item-text"><img src="~/Content/Icons/mail.png"> &nbsp arsman.ahmad@gmail.com </p>
+                    <p class="list-group-item-text"><img src="~/Content/Icons/mail.png"> &nbsp bitf12m051@pucit.edu.pk </p>
+                </blockquote>
+            </a>
+            <a href="callto://+923219190857" class="list-group-item">
+                <h4 class="list-group-item-heading" style="font-family: Hobo Std; font-weight:bolder; ">Phone:</h4>
+                <blockquote style="font-family: Candara;">
+                    <p class="list-group-item-text"><img src="~/Content/Icons/phone.png">(+92) <b>321</b> - 919 - 0857  </p>
+                    <p class="list-group-item-text"><img src="~/Content/Icons/phone.png">(+92) <b>315</b> - 919 - 0857  </p>
+                </blockquote>
+            </a>
+        </div>
+
+        <div class="col-lg-6" style="opacity:0.2">
+
+            <img src="~/Content/Images/contactus.png" width="90%" height="90%" style="padding-left:10%" />
+
+
+        </div>
+    </div>
+    <br /><br />
+
+
+
+</body>
+</html>

@@ -1,0 +1,152 @@
+﻿@model Discovery_Corner.Models.newTour
+@{
+    Layout = null;
+}
+
+@using Discovery_Corner.Models
+<!DOCTYPE html>
+
+<html>
+<head>
+    @Styles.Render("~/Content/css/bootstrap.css")
+    @Styles.Render("~/Content/css/bootstrap.js")
+    @Styles.Render("~/Content/CSS/footer%20Styler/footerStyle.css")
+    <link href="~/Content/hover-min.css" rel="stylesheet" />
+    <link href="~/Content/hover.css" rel="stylesheet" />
+
+
+    <!-- Form helper   -->
+    <script src="~/Content/CSS/js/bootstrap-formhelpers.min.js"></script>
+    <script src="~/Content/CSS/js/bootstrap.min.js"></script>
+    <script src="~/Content/CSS/js/jquery-1.10.2.min.js"></script>
+    <link href="~/Content/CSS/form%20helper%20css/boot.css" rel="stylesheet" />
+    <link href="~/Content/CSS/form%20helper%20css/bootstrap-formhelpers.min.css" rel="stylesheet" />
+    <link href="~/Content/CSS/form%20helper%20css/bootstrap.min.css" rel="stylesheet" />
+    <!--end form helper-->
+
+    <meta name="viewport" content="width=device-width" />
+    <title>EditNewTour</title>
+
+    <style>
+    body {
+       background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-image: url(../../images/adminBackgroundImg.png);
+        background-attachment: fixed;
+        background-size: contain;
+    }
+    </style>
+
+
+
+</head>
+<body>
+
+    <div class="row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-7" style="background-color:lightgray; margin-top:4%;width:70%;opacity:0.8">
+            <nav class="navbar navbar-inverse" style="margin-top:2%">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <div class=""></div>
+                        <div style="float:left">
+                            <a class="navbar-brand" style="color:deepskyblue; font-size:32px" href="~/Admin/Index">Discovery Corner<small style="font-size:11px">(Admin panal)</small></a>
+                        </div>
+                    </div>
+                    <div style="float:none">
+                        <ul class="nav navbar-nav" style="color:deepskyblue;">
+                            <li><a href="~/Admin/Index">Home</a></li>
+                            <li><a href="~/Admin/NewTour">New Tour</a></li>
+                            <li><a href="~/Admin/PreviousTours">Previous Tour</a></li>
+                            <li><a class="active" href="~/Admin/Users">Users</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+    
+            
+
+            <div>
+                <a href="~/Admin/NewTour" style="font-size:26px">
+                    <button name="Cancell" class="form-control" style="width:30%; margin-left:40%;background-color:lightgray">Cancel</button>
+                </a>
+            </div>
+
+            <br>
+
+            <h1>Zaid Javed<small>[Admin]</small></h1>
+
+
+
+            <!--Time ,Date picker-->
+            <!--
+            <div style="width:16%" class="bfh-timepicker">
+            </div>
+            <div style="width:16%" class="bfh-datepicker">
+            </div>
+            -->
+
+            <h1 style="margin-left:35%">Edit new Tour</h1>
+
+            <div style="margin-left:40%; width:50% ;height:170%;margin-bottom:4%">
+
+                @using (Html.BeginForm("EditNewTour1", "Admin", FormMethod.Post))
+                { <table style="width:50%;">
+                    <tr>
+                        @Html.HiddenFor(m => m.Id)
+                        <td>
+                            @Html.LabelFor(m => m.place)
+                        </td>
+                        <td>
+
+                            @Html.EditorFor(m => m.place)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.LabelFor(m => m.budget)
+                        </td>
+                        <td>
+                            @Html.EditorFor(m => m.budget)
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            @Html.LabelFor(m => m.date)
+                        </td>
+                        <td>
+                            @Html.EditorFor(m => m.date)
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.LabelFor(m => m.noOfDays)
+                        </td>
+                        <td>
+                            @Html.EditorFor(m => m.noOfDays)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.LabelFor(m => m.imageName)
+                        </td>
+                        <td>
+                            @Html.EditorFor(m => m.imageName)
+                        </td>
+                    </tr>
+                </table>
+                    <input class="form-control" style="width:20%" type="submit" value="Save" />
+
+                }
+
+            </div>
+
+
+            </div>
+        </div>
+</body>
+
+</html>

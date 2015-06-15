@@ -1,0 +1,49 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model Discovery_Corner.Models.PreviousTour 
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    @Styles.Render("~/Content/css/bootstrap.css")
+    @Styles.Render("~/Content/css/bootstrap.js")
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+    <!--Social button-->
+    <link href="~/font-awesome-4.3.0/social-buttons-3.css" rel="stylesheet" />
+
+
+</head>
+<body>
+    <div>
+        <div class="row">
+            <h1>Details View</h1>
+            
+            <div class="col-md-2" style="margin-left:20%">
+
+                <!-- Trigger the modal with a button -->
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content" style="align-items: center">                                               
+                    <img data-dismiss="modal" src="~/previousTourPics/img_@(Model.Id)_1.jpg" class="img-responsive">     
+                    
+                </div>
+            </div>
+        </div>
+                <div style="width:300%">
+                    <img class="img-responsive img-rounded" data-toggle="modal" data-target="#myModal" src="~/previousTourPics/img_@(Model.Id)_1.jpg">
+                    </div>
+                <label style="margin-top:10%"> Place:  </label>@Model.place<br/>
+                <label> No of Days:  </label>@Model.noOfdays<br /> 
+                <label> Budget:  </label>@Model.budget<br /> 
+                <label> Date:  </label>@Model.date<br /> 
+            </div>
+        </div>
+    </div>
+    <!-- Social Links-->
+    @Html.Partial("~/Views/Shared/_socialLinks.cshtml");
+</body>
+</html>

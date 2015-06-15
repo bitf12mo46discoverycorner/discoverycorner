@@ -1,0 +1,142 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    @Styles.Render("~/Content/css/bootstrap.css")
+    @Styles.Render("~/Content/css/bootstrap.js")
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+    <script src="~/Scripts/jquery-ui-1.8.24.js"></script>
+    <script src="~/Scripts/jquery-ui-1.8.24.min.js"></script>
+
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <link rel="stylesheet" href="/resources/demos/style.css">
+
+
+    <!-- font awesome-->
+    <link href="~/font-awesome-4.3.0/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/font-awesome-4.3.0/css/font-awesome.min.css" rel="stylesheet" />
+
+
+    <style>
+        body {
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-image: url(../../images/adminBackgroundImg.png);
+            background-attachment: fixed;
+            background-size: contain;
+        }
+    </style>
+
+</head>
+<body >
+    <div class="row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-7" style="background-color:white; margin-top:4%;width:70%;opacity:0.8">
+            <nav class="navbar navbar-inverse" style="margin-top:2%">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <div class=""></div>
+                        <div style="float:left">
+                            <a class="navbar-brand" style="color:deepskyblue; font-size:32px" href="~/Admin/Index">Discovery Corner<small style="font-size:11px">(Admin panal)</small></a>
+                        </div>
+                    </div>
+                    <div style="float:none">
+                        <ul class="nav navbar-nav" style="color:deepskyblue;">
+                            <li><a href="~/Admin/Index"><i style="color:deepskyblue" class="fa fa-lg fa-home"></i> Home</a></li>
+                            <li><a href="~/Admin/NewTour">New Tour</a></li>
+                            <li><a href="~/Admin/AddPreviousTour">Previous Tour</a></li>
+                            <li><a href="~/Admin/Users">Users</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+        
+        <br>
+
+
+
+
+
+        <!--Time ,Date picker-->
+        <!--
+        <div style="width:16%" class="bfh-timepicker">
+        </div>
+        <div style="width:16%" class="bfh-datepicker">
+        </div>
+        -->
+
+
+
+
+
+        <h1 style="margin-left:35%">Post new Tour</h1>
+            <form class="form-horizontal" action="~/Admin/AddNewTour" enctype="multipart/form-data"  role="form" method="post">
+                <div class="form-group">
+                    <label class="control-label col-md-4">place</label>
+                    <div class="col-md-3">
+                        <input type="text" class="form-control" required="" placeholder="place" name="place" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-md-4 bfh-number">Days</label>
+                    <div class="col-md-3">
+                        <input type="text" class="form-control bfh-number " data-min="1" data-max="25" name="noOfDays">
+
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label class="control-label col-md-4">Date</label>
+
+                    <div id="jah">
+                        <input type="date" id="datepicker " class="bfh-datepicker  col-md-4 form-control" style="width:23%" name="date">
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-4">Budget</label>
+                    <div class="col-md-3">
+                        <input type="text" class="form-control" required="" placeholder="budget" name="budget" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-md-4">Image name</label>
+                    <div class="col-md-3">
+                        <input type="text" class="form-control" required="" placeholder="image name" name="imageName" />
+                    </div>
+                </div>
+
+
+
+
+                <div class="form-group">
+                    <label class="control-label col-md-4"></label>
+                    <div class="col-md-3">
+                        <input type="file" required name="pic" multiple class="form-control" style="background-color:lightblue" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-4"></label>
+                    <div class="col-md-3">
+                        <input type="submit" class="form-control" style="box-shadow:#83d4ef ; background-color:lightblue;text-decoration-color:black;font-family:'Buxton Sketch';font-size:20px;" value="Post">
+                    </div>
+                </div>
+
+            </form>
+    </div>
+    </div>
+</body>
+</html>

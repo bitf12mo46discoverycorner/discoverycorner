@@ -1,0 +1,282 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using Discovery_Corner.Models
+
+<!DOCTYPE html>
+
+
+<html>
+@Styles.Render("~/Content/Site.css")
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Admin-Template/dist/css/sb-admin-2.css" rel="stylesheet" />
+    <link href="~/Admin-Template/dist/css/timeline.css" rel="stylesheet" />
+    <script src="~/Admin-Template/dist/js/sb-admin-2.js"></script>
+    <link href="~/Views/Shared/_AllLinks.cshtml" rel="stylesheet" />
+    <link href="~/Content/hover.css" rel="stylesheet" />
+    <link href="~/Content/hover-min.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <link href="~/Content/CSS/ihover/ihover.css" rel="stylesheet" />
+    <link href="~/Content/CSS/ihover/ihover.min.css" rel="stylesheet" />
+
+
+    <!--Social button-->
+    <link href="~/font-awesome-4.3.0/social-buttons-3.css" rel="stylesheet" />
+
+
+    <!--Fount Awsome-->
+    <link href="~/font-awesome-4.3.0/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/font-awesome-4.3.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/font-awesome-4.3.0/social-buttons-3.css" rel="stylesheet" />
+
+    <!--end fount awesome link-->
+
+    <title>Tour</title>
+
+
+    <style>
+        body {
+            background-repeat: no-repeat;
+            background-image: url(../../images/newTour.jpg);
+            background-attachment: fixed;
+            background-size: contain;
+            height:700%;
+        }
+    </style>
+
+</head>
+<body>
+    <!-- Trigger the modal with a button -->
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Login To see New Tour</h4>
+                </div>
+                <form action="/ContectUs/login" method="post" role="form">
+                    <div class="modal-body">
+                        <p>Welcome to Zaid Javed's Website</p>
+                        <input type="text" class="form-control" name="email" placeholder="xyz@example.com" required>
+                        <input type="password" class="form-control" required name="password">
+                    </div>
+                    <div class="modal-footer">
+                        <input type="submit" class="btn btn-default" value="login" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <!--
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <div class=""></div>
+                <a class="navbar-brand" href="~/Home/Index">Discovery Corner</a>
+            </div>
+            <div>
+                <ul class="nav navbar-nav">
+
+                    <li><a href="~/Home/Index">Home</a></li>
+                    <li class="active"><a href="Tour">Tour</a></li>
+                    <li><a href="PreviousTour">Previous Tour</a></li>
+                    <li><a href="~/Home/ContectUs">Contect Me</a></li>
+                    <li><a href="AboutUs">About Me</a></li>
+                    <li><a href="SignUp">Sign Up</a> </li>
+                    <li><a href="~/Admin-Template/pages/typography.html">Admin</a> </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    -->
+    <div style="margin-top:2%">
+        <nav class="navbar navbar-btn navbar-static-top" style="color:silver" >
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" style="background-color:lightblue;opacity:0.6">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div style="width:10%;height:5% ;">
+                        <a class="navbar-brand" href="~/Home/Index" style="font-family:'Freestyle Script';margin-left:3%; font-size:100px;">Discovery Corner</a>
+                    </div>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="margin-left:30%; width:58%; background-color:coral;border-radius:20px 20px; align-items:flex-start; font-family:'Bradley Hand ITC';font-size:16px;">
+                    <ul class="nav navbar-nav">
+                        <li><a class=" hvr-bounce-to-bottom" href="~/Home/Index" style="opacity:0.9">Home <span class="sr-only">(current)</span></a></li>
+                        <li class=" hvr-bounce-to-right hvr-bounce-in"><a href="~/Tour/Tour">Tour<span class="icon-bar"></span></a></li>
+                        <li><a class=" hvr-bounce-to-top" href="~/Tour/PreviousTour">Previous Tour<span class="icon-bar"></span></a></li>
+                        <li><a class=" hvr-bounce-to-top hvr-bounce-to-right" href="~/Home/gallery"><i style="color:#2bbded" class="fa fa-lg fa-connectdevelop"></i> Gallery<span class="icon-bar"></span></a></li>
+                        <li><a class=" hvr-bounce-to-left" href="~/ContectUs/ContectUs">Contact me<span class="icon-bar"></span></a></li>
+                        <li><a class=" hvr-bounce-to-right" href="~/Home/AboutUs">About me<span class="icon-bar"></span></a></li>
+                        <li><a class=" hvr-bounce-to-bottom" href="~/SignUp/SignUp">Sign up<span class="sr-only"></span></a></li>
+                        <!--<li><a href="~/Admin-Template/pages/typography.html">Admin</a> </li>-->
+                        @Html.Partial("~/Views/Shared/_loginLogout.cshtml")
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <!--<li><a href="#">any link</a></li>-->
+                        <!--drop down list-->
+                        <!--
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">Separated link</a></li>
+                            </ul>
+                        </li>
+                        -->
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+    </div>
+    <!--    <table>
+
+         <tr>
+             <td style="float:left"><h1 style="font-family: Aharoni;">Images</h1></td>
+
+         </tr>
+
+         <tr>
+
+             <td>
+                 <p style="float:left; font-family:'Blackadder ITC'; font-size:large; color:palevioletred">Murree</p>
+                 <img class="imghover" style=" height:500px; width:400px " src="~/images/contectUs.png">
+             </td>
+             <td>
+                 <img class="imghover" style=" height:500px; width:400px " src="~/images/contectUs.png">
+             </td>
+             <td>
+                 <img class="imghover" style=" height:500px; width:400px " src="~/images/contectUs.png">
+             </td>
+
+         </tr>
+     </table>
+
+     <table>
+
+         <tr style="border:double">
+             <td>
+                 <p style="float:inherit; font-family:'Blackadder ITC'; font-size:large; color:palevioletred">Mughalpura</p>
+                 <img class="imghover" style=" height:500px; width:400px " src="~/images/contectUs.png">
+
+             </td>
+             <td>
+                 <img class="caption" style=" height:500px; width:400px " src="~/images/contectUs.png">
+             </td>
+             <td>
+                 <img class="imghover" style=" height:500px; width:400px " src="~/images/contectUs.png">
+             </td>
+
+         </tr>
+     </table>
+        -->
+    <div>
+        
+        <h1 style="font-family:'Freestyle Script';margin-left:43%; font-size:72px;color:coral;border-color:blue;font:bold; text-shadow:2px 2px 2px #12bdeb">New Tour</h1>
+
+    </div>
+    <div class="row" style="margin-bottom:7%">
+        <div class="col-lg-4"></div>
+        <div class="col-lg-8">
+           
+              
+            
+
+                    @foreach (newTour p in Model)
+                    {
+                        <table >
+                            <div>
+                                <tr>
+                                    <td>
+                                        <h1 style="color:coral;text-shadow:2px 2px 2px #12bdeb"> @p.place </h1>
+                                    </td>
+                                </tr>
+                            </div>
+                            <tr>
+
+                                <td>
+
+                                    <!-- Left to right-->
+                                    <div class="row">
+                                        <div class="col-sm-8">
+
+                                            <!-- normal -->
+                                            <div class="ih-item square effect9 left_to_right" style="width:60%;height:90%">
+                                                <a href="#">
+
+                                                    <div class="img" style="width:100%;">
+                                                        <img class="img-responsive img-rounded" width="100%" height="100%" src="~/newTourPics/img_@(p.Id)_1.jpg" />
+                                                        <!--<img src="~/images/previousTour2.jpg" alt="img"-->
+                                                    </div>
+                                                    <div class="info" style="width:100%; height:103%  ">
+                                                        <div class="info-back" style="width:100%;">
+                                                            <table>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <h3>@p.place</h3>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <p style="font-family:'Bauhaus 93';font-size:16px">
+                                                                            Budget:  @p.budget<br />
+                                                                            Date:  @p.date<br />
+                                                                            Days  @p.noOfDays<br />
+                                                                        </p>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                        <hr style="width:100%" />
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <!-- end normal -->
+                                        </div>
+                                    </div>
+                                    <!-- end Left to right-->
+
+
+
+                                </td>
+
+                            </tr>
+
+                        </table>
+                    }
+
+              
+
+
+            </div>
+        </div>
+    
+
+
+ 
+
+
+
+
+
+
+    @Html.Partial("~/Views/Shared/_socialLinks.cshtml")
+
+</body>
+</html>

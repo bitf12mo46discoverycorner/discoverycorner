@@ -1,0 +1,302 @@
+﻿
+@{
+    Layout = null;
+}
+@using Discovery_Corner.Models
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link rel="icon" type="image/png" href="~/images/icon.png" sizes="96x96">
+    <!--/ fancy-->
+    <link href="~/Content/fancy%20box/fancy%20box%20CSS/jquery.fancybox.css" rel="stylesheet" />
+    <link href="~/Content/fancy%20box/fancy%20box%20CSS/jquery.fancybox-thumbs.css" rel="stylesheet" />
+    <link href="~/Content/fancy%20box/fancy%20box%20CSS/jquery.fancybox-buttons.css" rel="stylesheet" />
+
+
+    <!--Full slider-->
+    <link href="~/Content/CSS/slider/full-slider.css" rel="stylesheet" />
+    <script src="~/Content/CSS/slider/jquery.js"></script>
+    <script src="~/Content/CSS/slider/bootstrap.min.js"></script>
+    <link href="~/Content/CSS/slider/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/CSS/slider/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/CSS/slider/css/full-slider.css" rel="stylesheet" />
+    <link href="~/Content/drag%20and%20drop%20upload/draganddrop.css" rel="stylesheet" />
+    <script src="~/Content/drag%20and%20drop%20upload/draganddrop.js"></script>
+    @Html.Partial("~/Views/Shared/_AllLinks.cshtml")
+    <meta name="viewport" content="width=device-width" />
+    <title>gallery</title>
+</head>
+<body>
+    <!-- Trigger the modal with a button -->
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Login To see New Tour</h4>
+                </div>
+                <form action="/ContectUs/login" method="post" role="form">
+                    <div class="modal-body">
+                        <p>Welcome to Zaid Javed's Website</p>
+                        <input type="text" class="form-control" name="email" placeholder="xyz@example.com" required>
+                        <input type="password" class="form-control" required name="password">
+                    </div>
+                    <div class="modal-footer">
+                        <input type="submit" class="btn btn-default" value="login" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <!--nav bar -->
+    <div class="row">
+
+
+        <nav class="navbar navbar-btn">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" style="background-color:lightblue">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div class="col-lg-2">
+                        <a class="navbar-brand" href="~/Home/Index" style="font-family:'Freestyle Script'; font-size:80px">Discovery Corner</a>
+                    </div>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse col-lg-10" id="bs-example-navbar-collapse-1" style="width:115%; background-color:lightblue;border-radius:20px 20px; align-items:center;height:2%; margin-left:3%;margin-top:6%">
+                    <ul class="nav navbar-nav">
+                        <li><a class=" hvr-bounce-to-bottom" href="~/Home/Index"><i style="color:#2bbded" class="fa fa-lg fa-home"></i>Home <span class="sr-only">(current)</span></a></li>
+                        <li><a class="hvr-bounce-to-top" href="~/Tour/Tour">Tour<span class="icon-bar"></span></a></li>
+                        <li class=" hvr-bounce-to-bottom hvr-bounce-in  "><a href="~/Tour/PreviousTour">Previous Tour<span class="icon-bar"></span></a></li>
+                        <li><a class=" hvr-bounce-out hvr-bounce-to-right" href="~/ContectUs/ContectUs"><i style="color:#2bbded" class="fa fa-lg fa-connectdevelop"></i> Contact Us<span class="icon-bar"></span></a></li>
+                        <li><a class=" hvr-bounce-out hvr-bounce-to-right" href="~/Home/gallery"><i style="color:#2bbded" class="fa fa-lg fa-connectdevelop"></i> Gallery<span class="icon-bar"></span></a></li>
+                        <li><a class=" hvr-bounce-to-right" href="~/Home/AboutUs"><i style="color:#2bbded" class="fa fa-lg fa-user"></i> About Us<span class="icon-bar"></span></a></li>
+                        <li><a class=" hvr-bounce-to-bottom" href="~/SignUp/SignUp"><i style="color:#2bbded" class="fa fa-lg fa-sign-in"></i> Sign up<span class="sr-only"></span></a></li>
+
+                        @Html.Partial("~/Views/Shared/_loginLogout.cshtml");
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <!--<li><a href="#">any link</a></li>-->
+                        <!--drop down list-->
+                        <!--
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">Separated link</a></li>
+                            </ul>
+                        </li>
+                        -->
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+
+    </div>
+    <!--navigation bar end-->   
+
+
+        <hr />
+    <h1>Recent Pictures</h1>
+        @{ int count = 2;}
+        <div class="row">
+            
+            @foreach (newTour p in Model)
+            {
+                if (count % 2 == 0)
+                {
+                    <br />
+                    <div class="row"></div>
+                }
+                <div class="col-md-6">
+                    <div class="thumbnail">
+                        <a class="fancybox" href="~/newTourPics/img_@(p.Id)_1.jpg" data-fancybox-group="gallery" title="@p.place">
+                            <img src="~/newTourPics/img_@(p.Id)_1.jpg" />
+                        </a>
+                        <div class="caption">@p.place </div>
+
+                    </div>
+                </div>
+                count++;
+            }
+        </div>
+
+        @{ int count1 = 2;}
+        <div class="row">
+            @foreach (newTour p in Model)
+            {
+                if (count1 % 2 == 0)
+                {
+                    <br />
+                    <div class="row"></div>
+                }
+                <div class="col-md-6">
+                    <div class="thumbnail">
+                        <a class="fancybox" href="~/newTourPics/img_@(p.Id)_2.jpg" data-fancybox-group="gallery" title="@p.place">
+                            <img src="~/newTourPics/img_@(p.Id)_2.jpg" />
+                        </a>
+                        <div class="caption">@p.place </div>
+
+                    </div>
+                </div>
+                count1++;
+            }
+        </div>
+        @{ int count2 = 2;}
+        <div class="row">
+            @foreach (newTour p in Model)
+            {
+                if (count2 % 2 == 0)
+                {
+                    <br />
+                    <div class="row"></div>
+                }
+                <div class="col-md-6">
+                    <div class="thumbnail">
+                        <a class="fancybox" href="~/newTourPics/img_@(p.Id)_3.jpg" data-fancybox-group="gallery" title="@p.place">
+                            <img src="~/newTourPics/img_@(p.Id)_3.jpg" />
+                        </a>
+                        <div class="caption">@p.place </div>
+
+                    </div>
+                </div>
+                count2++;
+            }
+        </div>
+        @{ int count3 = 2;}
+        <div class="row">
+            @foreach (newTour p in Model)
+            {
+                if (count3 % 2 == 0)
+                {
+                    <br />
+                    <div class="row"></div>
+                }
+                <div class="col-md-6">
+                    <div class="thumbnail">
+                        <a class="fancybox" href="~/newTourPics/img_@(p.Id)_4.jpg" data-fancybox-group="gallery" title="@p.place">
+                            <img src="~/newTourPics/img_@(p.Id)_4.jpg" />
+                        </a>
+                        <div class="caption">@p.place </div>
+
+                    </div>
+                </div>
+                count3++;
+            }
+        </div>
+
+
+
+        <hr />
+    <h1>Previous Tour Pictures</h1>
+        @{ int count4 = 2;}
+        <div class="row">
+            @foreach (PreviousTour p in ViewBag.PreviousT)
+            {
+                if (count3 % 2 == 0)
+                {
+                    <br />
+                    <div class="row"></div>
+                }
+                <div class="col-md-6">
+                    <div class="thumbnail">
+                        <a class="fancybox" href="~/previousTourPics/img_@(p.Id)_1.jpg" data-fancybox-group="gallery" title="@p.place">
+                            <img src="~/previousTourPics/img_@(p.Id)_1.jpg" />
+                            </a>
+                            <div class="caption">@p.place </div>
+
+                    </div>
+                </div>
+                count4++;
+            }
+        </div>
+
+        @{ int count5 = 2;}
+        <div class="row">
+            @foreach (PreviousTour p in ViewBag.PreviousT)
+            {
+                if (count5 % 2 == 0)
+                {
+                    <br />
+                    <div class="row"></div>
+                }
+                <div class="col-md-6">
+                    <div class="thumbnail">
+                        <a class="fancybox" href="~/previousTourPics/img_@(p.Id)_2.jpg" data-fancybox-group="gallery" title="@p.place">
+                            <img src="~/previousTourPics/img_@(p.Id)_2.jpg" />
+                        </a>
+                        <div class="caption">@p.place</div>
+
+                    </div>
+                </div>
+                count5++;
+            }
+        </div>
+        @{ int count6 = 2;}
+        <div class="row">
+            @foreach (PreviousTour p in ViewBag.PreviousT)
+            {
+                if (count6 % 2 == 0)
+                {
+                    <br />
+                    <div class="row"></div>
+                }
+                <div class="col-md-6">
+                    <div class="thumbnail">
+                        <a class="fancybox" href="~/previousTourPics/img_@(p.Id)_3.jpg" data-fancybox-group="gallery" title="@p.place">
+                            <img src="~/previousTourPics/img_@(p.Id)_3.jpg" />
+                        </a>
+                        <div class="caption">@p.place</div>
+
+                    </div>
+                </div>
+                count6++;
+            }
+        </div>
+        @{ int count7 = 2;}
+        <div class="row">
+            @foreach (PreviousTour p in ViewBag.PreviousT)
+            {
+                if (count7 % 2 == 0)
+                {
+                    <br />
+                    <div class="row"></div>
+                }
+                <div class="col-md-6">
+                    <div class="thumbnail">
+                        <a class="fancybox" href="~/previousTourPics/img_@(p.Id)_4.jpg" data-fancybox-group="gallery" title="@p.place">
+                            <img src="~/previousTourPics/img_@(p.Id)_4.jpg" />
+                        </a>
+                        <div class="caption">@p.place</div>
+
+                    </div>
+                </div>
+                count7++;
+            }
+        </div>
+
+
+        @Html.Partial("~/Views/Shared/_fancyJS.cshtml")
+    </div>
+
+    <a title="Total Visitors|Discovery Corner[Zaid Javed]"><img src="http://counter8.bestfreecounterstat.com/private/freecounterstat.php?c=3eb50f63639219b61a6abedc25f41457" border="0" title="hit counter" alt="hit counter"></a>
+</body>
+</html>

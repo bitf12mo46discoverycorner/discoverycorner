@@ -1,0 +1,307 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Styles.Render("~/Content/css/bootstrap.css")
+@Styles.Render("~/Content/css/bootstrap.js")
+@using Discovery_Corner.Models;
+<!DOCTYPE html>
+
+<html>
+<head>
+
+
+    <!--Fount Awsome-->
+    <link href="~/font-awesome-4.3.0/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/font-awesome-4.3.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/font-awesome-4.3.0/social-buttons-3.css" rel="stylesheet" />
+
+    @Html.Partial("~/Views/Shared/_AllLinks.cshtml")
+  
+    <meta name="viewport" content="width=device-width" />
+    <title>Contect Us</title>
+
+    <style>
+
+
+        body {
+            background-repeat:no-repeat;
+            background-image:url(../images/contectUs.png);
+            background-attachment:fixed;
+            background-size:contain;
+            
+        }
+    </style>
+    <link href="~/font-awesome-4.3.0/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/font-awesome-4.3.0/css/font-awesome.min.css" rel="stylesheet" />
+</head>
+<body style="background-repeat:no-repeat">
+    
+        <!-- Trigger the modal with a button -->
+       
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Login To see New Tour</h4>
+                    </div>
+                    <form action="/ContectUs/login" method="post" role="form">
+                        <div class="modal-body">
+                            <p>Welcome to Zaid Javed's Website</p>
+                            <input type="text" class="form-control" name="email" placeholder="xyz@example.com" required>
+                            <input type="password" class="form-control" required name="password">
+                        </div>
+                        <div class="modal-footer">
+                            <input type="submit" class="btn btn-default"  value="login"/>
+                        </div>
+                    </form>            
+                </div>    
+            </div>    
+        </div>
+
+
+    <!--
+    <nav class="navbar navbar-default embed-responsive"  >
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <div class=""></div>
+                <a class="navbar-brand" href="~/Home/Index">Discovery Corner</a>
+            </div>
+            <div>
+                <ul class="nav navbar-nav">
+
+                    <li><a href="~/Home/Index">Home</a></li>
+                    <li><a href="Tour">Tour</a></li>
+                    <li><a href="PreviousTour">Previous Tour</a></li>
+                    <li style="animation-fill-mode:backwards" class="active"><a href="~/Home/ContectUs">Contect Me</a></li>
+                    <li><a href="AboutUs">About Me</a></li>
+                    <li><a href="SignUp"><i class="fa fa-ambulance fa-2x"></i> Up</a> </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+         -->
+    <div>
+        <nav class="navbar navbar-btn">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" style="background-color:lightblue">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="~/Home/Index" style="font-family:'Freestyle Script';margin-left:3%; font-size:72px; color:#2bbded">
+                        Discovery Corner
+                    </a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="margin-left:30%; width:58%;background-color:lightblue;border-radius:20px 20px;">
+                    <ul class="nav navbar-nav">
+                        <li><a class=" hvr-bounce-to-bottom" href="~/Home/Index">Home <span class="sr-only">(current)</span></a></li>
+                        <li><a class="  hvr-bounce-to-right" href="~/Tour/Tour">Tour<span class="icon-bar"></span></a></li>
+                        <li><a class=" hvr-bounce-to-left" href="~/Tour/PreviousTour">Previous Tour<span class="icon-bar"></span></a></li>
+                        <li class="active"><a class=" hvr-bounce-to-right" href="ContectUs">Contact Us<span class="icon-bar"></span></a></li>
+                        <li><a class=" hvr-bounce-to-top" href="~/Home/gallery"><i style="color:#2bbded" class="fa fa-lg fa-connectdevelop"></i> Gallery<span class="icon-bar"></span></a></li>
+                        <li><a class=" hvr-bounce-to-right" href="~/Home/AboutUs">About Us<span class="icon-bar"></span></a></li>
+                        <li><a class=" hvr-bounce-to-bottom" href="~/SignUp/SignUp">Sign up<span class="sr-only"></span></a></li>
+                        @Html.Partial("~/Views/Shared/_loginLogout.cshtml");
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <!--<li><a href="#">any link</a></li>-->
+                        <!--drop down list-->
+                        <!--
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
+                </ul>
+            </li>
+            -->
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+    </div>
+    <div class="row">
+        <div class="col-lg-6 "></div>
+        <div class="col-lg-6">
+            <div  >
+                <h2 class="text-primary">
+                    <label class="control-label col-md-4"></label>
+                    <strong style="font-family:'Lucida Handwriting';font-size:46px;color:#2bbded">
+                        <a href="#"><i style="color:#2bbded" class="fa fa-lg fa-university"></i></a>
+                        Contect Us<br />
+
+                    </strong>
+                </h2>
+            </div><br />
+            <div >
+                <form class="form-horizontal  " action="~/ContectUs/ContectUsed" role="form" method="post" >
+                    <div class="form-group">
+                        <label class="control-label col-md-5" style="color:#2bbded">Name</label>
+                        <div class="col-md-6">
+                            <input type="text" style="opacity:0.6;" class="form-control" required placeholder="enter full name" name="name" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-md-5" style="color:#2bbded">E-mail</label>
+                        <div class="col-md-6">
+                            <input type="text" style="opacity:0.6;" class="form-control" required placeholder="zeej@example.com" name="email" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-md-5" style="color:#2bbded">Title</label>
+                        <div class="col-md-6">
+                            <input type="text" style="opacity:0.6;" required class="form-control" placeholder="title" name="title">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label style="resize:none;color:#2bbded" spellcheck="true" class="control-label col-md-5" >Feedback</label>
+                        <div class="col-md-6">
+                            <textarea rows="5" ondragover="false" onratechange="false" onselect="false" cols="30" draggable="true" required class="form-control" placeholder="Feedback" name="message"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-md-5"></label>
+                        <div class="col-md-6">
+                            <input type="submit" class="form-control" style=" background-color:#2bbded;font-family:'Berlin Sans FB' ; font-size:24px ; padding:4px 7px 2px 4px;" value="send">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4 pull-left" style="opacity:0.8">
+
+            <!---->
+            <br /><br />
+            <div class="container-fluid row">
+
+              
+
+              
+
+                    <a href="https://goo.gl/maps/cXqTp " target="_blank" class="list-group-item active">
+                        <h4 class="list-group-item-heading" style="font-family: Hobo Std; font-weight:bolder; align-content:center">By: <b>Zaid Javed-46</b></h4>
+                        <blockquote>
+                            <p class="list-group-item-text" style="color:white">Student - Bachelors in Information & Technology - <b>University of the Punjab</b>, Lahore, Pakistan</p>
+
+                        </blockquote>
+                    </a>
+
+                    <a href="http://www.pucit.edu.pk" target="_blank" class="list-group-item">
+                        <h4 class="list-group-item-heading" style="font-family: Hobo Std; font-weight:bolder; ">Address:</h4>
+                        <blockquote>
+                            <p class="list-group-item-text">Punjab University College of Information Technology - PUCIT Lahore, Pakistan</p>
+                        </blockquote>
+                    </a>
+                    <a href=" mailto:arsman.ahmad@gmail.com" class=" list-group-item">
+                        <h4 class="list-group-item-heading" style="font-family: Hobo Std; font-weight:bolder; ">Email:</h4>
+                        <blockquote>
+                             
+                            <p class="list-group-item-text"><img src="~/images/mail.png"> &nbsp zaidjaved28@gmail.com </p>
+                            <p class="list-group-item-text"><img src="~/images/mail.png"> &nbsp bitf12m046@pucit.edu.pk </p>
+                        </blockquote>
+                    </a>
+                    <a href="callto://+923219190857" class="list-group-item">
+                        <h4 class="list-group-item-heading" style="font-family: Hobo Std; font-weight:bolder; ">Phone:</h4>
+                        <blockquote style="font-family: Candara;">
+                            <p class="list-group-item-text"><img src="~/images/phone.png">(+92) <b>324</b> - 482 - 1531  </p>
+                            <p class="fa-skype" ><img src="~/images/phone.png"> zaid.javed46  </p>
+                        </blockquote>
+                    </a>
+               
+
+                <div class="col-lg-6" style="opacity:0.2">
+
+                    <img src="~/Content/Images/contactus.png" width="90%" height="90%" style="padding-left:10%" />
+
+
+                </div>
+            </div>
+            <br /><br />
+
+<!----->
+
+        </div>
+        <div class="img-circle col-lg-8 img-rounded pull-right" style="margin-bottom:5%;width:50%;margin-right:3%">
+            <!-- Bootstrap core CSS -->
+            <link href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/css/bootstrap.css" rel="stylesheet" media="screen">
+
+            <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+            <!--[if lt IE 9]>
+              <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
+              <script src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.3.0/respond.js"></script>
+            <![endif]-->
+
+            <style>
+                #map-container {
+                    height: 500px;
+                }
+            </style>
+
+
+            <div id="map-container" class="col-md-12"></div>
+
+            <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+            <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+            <!-- Include all compiled plugins (below), or include individual files as needed -->
+            <script src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/js/bootstrap.min.js"></script>
+            <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+
+            <script>
+
+
+                function init_map() {
+                    var var_location = new google.maps.LatLng(31.563199, 74.411006);
+
+
+                    var var_mapoptions = {
+                        center: var_location,
+                        zoom: 14
+                    };
+
+                    var var_marker = new google.maps.Marker({
+                        position: var_location,
+                        map: var_map,
+                        title: "Venice"
+                    });
+
+                    var var_map = new google.maps.Map(document.getElementById("map-container"),
+                        var_mapoptions);
+
+                    var_marker.setMap(var_map);
+
+                }
+
+                google.maps.event.addDomListener(window, 'load', init_map);
+
+            </script>
+        </div>
+    </div>
+    <!-- Social Links-->
+  @Html.Partial("~/Views/Shared/_socialLinks.cshtml");
+
+</body>
+
+</html>

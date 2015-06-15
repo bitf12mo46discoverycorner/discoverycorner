@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "_loginLogout";
+}
+
+<li>
+    @{
+        if (Session["ActiveUser"] == null)
+        {
+            <button type="button" class="btn btn-info hvr-pulse-grow" data-toggle="modal" data-target="#myModal"><i class=" fa-lock "></i>login</button>
+        }
+        else
+        {
+            <button class="btn btn-info btn-lg hvr-pulse-shrink " style="background-color:red;color:#c6030f;"><a href="@Url.Action("logout", "ContectUs"  )"><i style="color:#c6030f;" class="fa fa-lg fa-unlock-alt"></i>logout</a></button>
+        }
+    }
+</li>
+

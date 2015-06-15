@@ -1,0 +1,128 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using Discovery_Corner.Models
+<!DOCTYPE html>
+
+<html>
+<head>
+    
+    @Styles.Render("~/Content/css/bootstrap.css")
+    @Styles.Render("~/Content/css/bootstrap.js")
+    @Styles.Render("~/Content/CSS/footer%20Styler/footerStyle.css")
+    <link href="~/Content/hover-min.css" rel="stylesheet" />
+    <link href="~/Content/hover.css" rel="stylesheet" />
+    
+
+    <!-- Form helper   -->
+    <script src="~/Content/CSS/js/bootstrap-formhelpers.min.js"></script>
+    <script src="~/Content/CSS/js/bootstrap.min.js"></script>
+    <script src="~/Content/CSS/js/jquery-1.10.2.min.js"></script>
+    <link href="~/Content/CSS/form%20helper%20css/boot.css" rel="stylesheet" />
+    <link href="~/Content/CSS/form%20helper%20css/bootstrap-formhelpers.min.css" rel="stylesheet" />
+    <link href="~/Content/CSS/form%20helper%20css/bootstrap.min.css" rel="stylesheet" />
+    <!--end form helper-->
+
+    <!-- font awesome-->
+    <link href="~/font-awesome-4.3.0/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/font-awesome-4.3.0/css/font-awesome.min.css" rel="stylesheet" />
+
+
+    <meta name="viewport" content="width=device-width" />
+    <title>AddNewTour</title>
+
+    <style>
+        body {
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-image: url(../images/adminBackgroundImg.png);
+            background-attachment: fixed;
+            background-size: contain;
+        }
+    </style>
+
+
+</head>
+<body>
+    <div class="row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-7" style="background-color:white; margin-top:4%;width:70%;margin-bottom:6%;opacity:0.8">
+            <nav class="navbar navbar-inverse" style="margin-top:2%">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <div class=""></div>
+                        <div style="float:left">
+                            <a class="navbar-brand" style="color:deepskyblue; font-size:32px" href="~/Admin/Index">Discovery Corner<small style="font-size:11px">(Admin panal)</small></a>
+                        </div>
+                    </div>
+                    <div style="float:none">
+                        <ul class="nav navbar-nav" style="color:deepskyblue;">
+                            <li><a href="~/Admin/Index"><i style="color:deepskyblue" class="fa fa-lg fa-home"></i>Home</a></li>
+                            <li><a href="~/Admin/NewTour">New Tour</a></li>
+                            <li><a href="~/Admin/AddPreviousTour">Previous Tour</a></li>
+                            <li><a class="active" href="~/Admin/Users">Users</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+
+            <!--Time ,Date picker-->
+            <!--
+            <div style="width:16%" class="bfh-timepicker">
+            </div>
+            <div style="width:16%" class="bfh-datepicker">
+            </div>
+            -->
+
+
+
+            <button name="Add New Tour" class=" form-control" style="width:46% ; margin-left:30%;background-color:antiquewhite;"><a href="~/Admin/Index" style="font-family:'Goudy Old Style' ; width:50%">Add New Tour </a> </button>
+
+
+            <div class="row" style="margin-top:6%">
+                <div class="col-lg-3"></div>
+                <div class="col-lg-9" >
+
+                    <table border="0" style="width:80%;margin-bottom:6%" class="table table-striped">
+                        <tbody>
+                            <tr>
+                        <td><label>ID</label></td>
+                        <td><label>Place</label></td>
+                        <td><label>Budget</label></td>
+                        <td><label>Date</label></td>
+                        <td><label>Days</label></td>
+                        <td><label>Image Name</label></td>
+                                <td></td>
+                                <td></td>
+                        </tr>
+                       
+                            @foreach (newTour i in Model)
+                            {
+                                <tr>
+                                    <td>@i.Id</td>
+                                    <td>@i.place</td>
+                                    <td>@i.budget</td>
+                                    <td>@i.date</td>
+                                    <td>@i.noOfDays</td>
+                                    <td>@i.imageName</td>
+                                    <td><button style="background-color:transparent;border-color:transparent"><i style=" color:#b6ff00;background-color:transparent" class="fa-3x fa fa-lg fa-edit"></i>@Html.ActionLink("edit", "EditNewTour", new { id = i.Id }) </button> </td>
+                                    <td><button style="background-color:transparent;border-color:transparent"><i style=" color:red;background-color:transparent" class="fa fa-lg fa-trash fa-3x"></i>@Html.ActionLink("trash", "DeleteTour", new { id = i.Id })  </button></td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+
+
+
+</body>
+</html>

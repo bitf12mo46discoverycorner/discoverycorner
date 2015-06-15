@@ -1,0 +1,290 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model Discovery_Corner.Models.User
+
+<!DOCTYPE html>
+
+<html>
+<head>
+
+
+    <style>
+        body {
+            background-repeat: no-repeat;
+            
+            background-image: url(../../images/signup1.png);
+            background-attachment: fixed;
+            background-size: contain;
+        }
+
+
+
+
+
+
+
+    </style>
+
+    <!--Hover-->
+    <link href="~/Content/hover-min.css" rel="stylesheet" />
+    <link href="~/Content/hover.css" rel="stylesheet" />
+    <!--Hover link end-->
+    <!--Fount Awsome-->
+    <link href="~/font-awesome-4.3.0/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/font-awesome-4.3.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/font-awesome-4.3.0/social-buttons-3.css" rel="stylesheet" />
+
+    <!--end fount awesome link-->
+    <!--Social button-->
+    <link href="~/font-awesome-4.3.0/social-buttons-3.css" rel="stylesheet" />
+
+
+
+    <meta name="viewport" content="width=device-width" />
+    <title>Sign Up</title>
+    @Styles.Render("~/Content/css/bootstrap.css")
+    @Styles.Render("~/Content/css/bootstrap.js")
+</head>
+<body>
+
+    <!-- Trigger the modal with a button -->
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Login To see New Tour</h4>
+                </div>
+                <form action="/ContectUs/login" method="post" role="form">
+                    <div class="modal-body">
+                        <p>Welcome to Zaid Javed's Website</p>
+                        <input type="text" class="form-control" name="email" placeholder="xyz@example.com" required>
+                        <input type="password" class="form-control" required name="password">
+                    </div>
+                    <div class="modal-footer">
+                        <input type="submit" class="btn btn-default" value="login" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+   
+
+    <div><img src="~/images/Start.jpg" style="width:100%" > </div>
+    <!--
+    <nav class="navbar navbar-btn" style="background-color:white;margin-top:-5%">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <div class=""></div>
+                <div style="float:left">
+                    <a class="navbar-brand" style="color:deepskyblue; font-size:32px" href="~/Home/Index">Discovery Corner</a>
+                </div>
+            </div>
+            <div style="float:none;margin-left:30%">
+                <ul class="nav navbar-nav" style="color:deepskyblue;">
+                    <li><a href="~/Home/Index" class="hvr-bounce-to-bottom"><i style="color:#2bbded" class="fa fa-lg fa-home"></i> Home</a></li>
+                    <li><a href="~/Tour/Tour" class="hvr-bounce-to-left">Tour</a></li>
+                    <li><a href="~/Tour/PreviousTour" class="hvr-bounce-to-right">Previous Tour</a></li>
+                    <li><a href="~/ContectUs/ContectUs" class="hvr-bounce-to-top"><i style="color:#2bbded" class="fa fa-lg fa-empire"></i> Contect Us</a></li>
+                    <li><a class=" hvr-bounce-to-top hvr-bounce-to-right" href="~/Home/gallery"><i style="color:#2bbded" class="fa fa-lg fa-connectdevelop"></i> Gallery<span class="icon-bar"></span></a></li>
+                    <li><a href="~/Home/AboutUs" class="hvr-bounce-to-left"><i style="color:#2bbded" class="fa fa-lg fa-male"></i> About Us</a></li>
+                    <li class="active"><a href="~/SignUp/SignUp" class="hvr-bounce-out hvr-bob  hvr-bounce-to-bottom"><i style="color:#2bbded" class="fa fa-lg fa-sign-in"></i> Sign Up</a> </li>
+                    
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    -->
+
+
+    <nav class="navbar navbar-btn" style="background-color:white;margin-top:-1%">
+        <div class=" container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" style="background-color:lightblue;opacity:0.5;" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a style="font-size:26px;text-shadow:3px 3px 2px #fafafa ;font-style:italic;font-family:'Bauhaus 93'" class="navbar-brand" href="~/Home/Index">Discovery Corner</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="margin-left:40%">
+            <ul class="nav navbar-nav">
+                <li><a class="hvr-bounce-to-bottom" href="~/Home/Index">Home <span class="sr-only">(current)</span></a></li>
+                <li><a class=" hvr-bounce-to-left" href=" ~/Tour/Tour">Tour<span class="icon-bar"></span></a></li>
+                <li><a class=" hvr-bounce-to-right" href=" ~/Tour/PreviousTour">Previous Tour<span class="icon-bar"></span></a></li>
+                <li><a class="hvr-bounce-to-left" href="~/ContectUs/ContectUs">Contact me<span class="icon-bar"></span></a></li>
+                <li><a class=" hvr-bounce-to-top hvr-bounce-to-right" href="~/Home/gallery"><i style="color:#2bbded" class="fa fa-lg fa-connectdevelop"></i> Gallery<span class="icon-bar"></span></a></li>
+                <li><a class=" hvr-bounce-to-right" href="~/Home/AboutUs">About me<span class="icon-bar"></span></a></li>
+                <li><a class=" hvr-bounce-to-bottom" href="~/SignUp/SignUp">Sign up<span class="sr-only"></span></a></li>
+                @Html.Partial("~/Views/Shared/_loginLogout.cshtml");
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <!--<li><a href="#">any link</a></li>-->
+                <!--drop down list-->
+                <!--
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                    </ul>
+                </li>
+                -->
+            </ul>
+        </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+
+    <div>
+        <div class="container">
+            <div class="text-right">
+                <h2 class="text-primary">
+                    <strong style="color:black">Let's Have fun Togather <br /></strong>
+                    <strong style="margin-right:9%;font-family:'Arial Unicode MS'">Join Us</strong>
+                </h2>
+            </div><br />
+            <div >
+            @using (Html.BeginForm("helo", "SignUp", FormMethod.Post, new { enctype = "multipart/form-data", style = "margin-bottom:2%" }))
+            {
+                @Html.ValidationSummary(true);
+          //  <form class="form-horizontal" action="~/SignUp/helo" role="form" method="post" enctype="multipart/form-data" style="color:black;font-family:'Imprint MT Shadow';font-size:28px;margin-bottom:9%">
+                <div class="form-group">
+                    <label class="control-label col-md-1" style="margin-left:65%"><a href="#"><i style="color:#2bbded" class="fa fa-lg fa-adjust"></i></a> Name</label>
+                    <div class="col-md-3">
+                        @Html.TextBoxFor(a => a.name, new { @class="form-control",placeholder="name"})
+                        @Html.ValidationMessageFor(a=>a.name)
+                     <!--   <input type="text" class="form-control" required="" placeholder="enter full name" name="name" />-->
+                    </div>
+                </div>                
+                <br />
+                <br />          
+                <div class="form-group">
+                    <label class="control-label col-md-1" style="margin-left:65%">Address</label>
+                    <div class="col-md-3">
+                        @Html.TextBoxFor(a => a.address, new { @class = "form-control", placeholder = "address" })
+                        @Html.ValidationMessageFor(a => a.address)
+                      <!--    <input type="text" class="form-control" required="" placeholder="current address" name="address" /> -->
+                    </div>
+                </div>
+                <br />
+                
+                <div class="form-group">
+                    <label class="control-label col-md-1" style="margin-left:65%">Phone</label>
+                    <div class="col-md-3">
+                        @Html.TextBoxFor(a => a.name, new { @class = "form-control", placeholder = "0324-xxxxxxx" })
+                        @Html.ValidationMessageFor(a => a.phone)
+                      <!--    <input type="text" class="form-control" required="" placeholder="phone number" name="phone" /> -->
+                    </div>
+                </div>
+                <br />
+                
+                <div class="form-group">
+                    <label class="control-label col-md-1" style="margin-left:65%">E-mail</label>
+                    <div class="col-md-3">
+                        <div id="checking">Checking...</div>
+                        @Html.TextBoxFor(a => a.name, new {id="UserName", @class = "form-control", placeholder = "email", type = "email" })
+                        @Html.ValidationMessageFor(a => a.email)
+                        <!--      <input type="email" class="form-control" required="" placeholder="zeej@example.com" name="email" /> -->
+                        <div id="result"></div>
+                    </div>
+                </div>
+                <br />
+                <div class="form-group">
+                    <label class="control-label col-md-1" style="margin-left:65%">Password</label>
+                    <div class="col-md-3">
+                        @Html.TextBoxFor(a => a.password, new { @class = "form-control", placeholder = "*********",type="password" })
+                    @Html.ValidationMessageFor(a => a.password)
+                         <!--     <input type="password" required="" class="form-control" placeholder="password" name="password"> -->
+                    </div>
+                </div>
+                <br />
+                <br />
+                <div class="form-group">
+                    <label class="control-label col-md-1" style="margin-left:65%">Conform Passwoed</label>
+                    <div class="col-md-3">
+                        @Html.TextBoxFor(a => a.password, new { @class = "form-control", placeholder = "********",type="password" })
+                        
+                        <!--     <input type="password" class="form-control" required="" maxlength="100" placeholder="conform password" name="conformPW"> -->
+                    </div>
+                </div>
+                <br />
+                
+                <div class="form-group">
+                    <label class="control-label col-md-1" style="margin-left:65%"></label>
+                    <div class="col-md-3">
+                        <input type="file" required  name="pic" multiple  class="form-control" style="background-color:lightblue" />
+                    </div>
+                </div>
+                <br />
+                <br />
+                <div class="form-group">
+                    <label class="control-label col-md-1" style="margin-left:65%"></label>
+                    <div class="col-md-3">
+                        <input type="submit" class="form-control" style="box-shadow:#83d4ef ; background-color:lightblue;text-decoration-color:black;font-family:'Buxton Sketch';font-size:20px;" value="Sign Up">
+                    </div>
+                </div>
+                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+            }
+                </div>
+        </div>
+    </div>
+
+    
+         @Html.Partial("~/Views/Shared/_socialLinks.cshtml")
+
+
+    <!-------------->
+    @Scripts.Render("~/Scripts/jquery-1.8.2")
+    @Scripts.Render("~/bundles/jquery")
+    <script>
+
+        $(document).ready(function () {
+
+            $('#checking').hide();
+
+            //$('#b1').click(function ()
+            $('#UserName').focusout(function () {
+
+                var userName = $('#UserName').val();
+
+               // alert('User Name =' + userName);
+                $('#checking').show();
+
+                $.getJSON("/SignUp/CheckUserName?UserName=" + userName, function (data) {
+                    $('#checking').hide();
+                    if (data) {
+                        $('#result').text("*User Name Already Exists");
+
+                    }
+                    else {
+                        $('#result').text("*User Name Available");
+                    }
+                });
+
+            });
+
+        });
+    </script>
+
+
+</body>
+</html>
