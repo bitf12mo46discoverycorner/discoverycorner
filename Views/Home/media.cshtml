@@ -1,16 +1,30 @@
 ﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@model Discovery_Corner.Models.User
+
 <!DOCTYPE html>
 
 <html>
 <head>
-    @Html.Partial("~/Views/Shared/_AllLinks.cshtml")
+
+    <!--Hover-->
+    <link href="~/Content/hover-min.css" rel="stylesheet" />
+    <link href="~/Content/hover.css" rel="stylesheet" />
+    <!--Hover link end-->
+    <!--Fount Awsome-->
+    <link href="~/font-awesome-4.3.0/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/font-awesome-4.3.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/font-awesome-4.3.0/social-buttons-3.css" rel="stylesheet" />
+
+    <!--end fount awesome link-->
+    <!--Social button-->
+    <link href="~/font-awesome-4.3.0/social-buttons-3.css" rel="stylesheet" />
+
     <meta name="viewport" content="width=device-width" />
-    <title>boardOfDirectors</title>
+    <title>media</title>
 </head>
 <body>
+
 
     <!-- Trigger the modal with a button -->
     <!-- Modal -->
@@ -34,6 +48,8 @@
             </div>
         </div>
     </div>
+
+    <!--navbar-->
     <div>
         <nav class="navbar navbar-btn">
             <div class="container-fluid">
@@ -83,59 +99,49 @@
         </nav>
     </div>
 
+
     <div class="row">
         <div class="col-lg-3"></div>
-        <div class="col-lg-6" style="margin-left:20%;margin-right:20%">
+        <div class="col-lg-6" style="margin-left:20%;margin-right:20%;background-color:lightblue">
+
             <div class="headerimgtop">
                 <div id="headerImage">
 
 
-                    <img alt="about board" title="about board" src="~/images/board.png">
+                    <img alt="media home" title="media home" src="">
 
 
                 </div>
             </div>
-            <p>
-                Strong leadership and guidance is provided to Discovery Corner by its 5-member Board of Directors,
-                representing a broad spectrum of Greater Discovery Corner's tourism industry.
-                These board members volunteer their time and contribute extensive knowledge and experience to ensure that
-                the organization is accountable and performance-driven.
+            <p style="margin-left: 14px; margin-right: 14px">
+                <a class="hvr-bob hvr-bounce-out" href="~/Home/AboutUs"><img src="~/images/icon.png" alt="media_kit_home" height="146" width="100" align="right" border="0"></a>
+                Discovery Corner offers numerous support services and resources for local, national and international journalists.
             </p>
-            <hr size="0">
-            <p>
-                <b>Chair:</b><br>
-                Zaid Javed
-                <br>Owner/Operator<br>
-                Zaid Javed
+            <p style="margin-left: 14px; margin-right: 14px">
+                Our staff is trained to help you produce quality, factual, intriguing and interesting stories for your audience.
             </p>
-            <p><b>Past Chair:</b><br></p><p>
-                M. Javed<br>
-                Regional VP &amp; General Manager<br>PC Hotels &amp; Resorts
-            </p><p>&nbsp;</p>
-            <hr size="0">
-            <p><b>First Deputy Chair (Chair 2015-2016)</b><br>Arsman<br>General Manager<br>Furqan Haider</p>
-            <p>
-                <b>
-                    <br>
-                    Directors:
-                </b><br><br>
-                Kamal Subhani<br>
-                President<br>
-                Zaid Javed
-            </p>
-            <p>
-                Zee J-46<br>
-                President &amp; <br>
-                President, CEO<br>
-                Discovery Corner<br>Shalimar Link Road<br>
-                Mughalpura Lahore<br>
-                <a href="~/ContectUs/ContectUs">Email@discoverycorner.com</a>
-            </p><p><a href="#"  ><i class="fa-mail-forward"></i> </a></p><p>Email->Zaid Javed&nbsp;</p><hr size="0"><p>&nbsp;</p><p>
+
+            <p style="margin-left: 14px; margin-right: 14px">&gt;Access our
+             <a href="~/Home/gallery">Image Gallery</a> </p>
+            <p style="margin-left: 14px; margin-right: 14px">&gt;<p style="margin-left: 14px; margin-right: 14px">&gt; <a href="~/ContectUs/ContectUs">Contact Us</a> </p>
 
 
-                <div class="clear"></div>
+            <div class="clear"></div>
+
+
 
         </div>
     </div>
+    <!-- Social Links-->
+    @Html.Partial("~/Views/Shared/_socialLinks.cshtml")
+
+
+
+    <a href="#"><i class="fa  fa-twitter fa-2x"></i></a>
+    <a href="#"><i class="fa fa-google-plus fa-2x"></i></a>
+
+
+    <a href="https://www.facebook.com/zaidjaved46"><i class="fa fa-facebook-f fa-spin fa-align-center" style="width:2%;height:2%; margin-left:4%;"></i></a>
+
 </body>
 </html>

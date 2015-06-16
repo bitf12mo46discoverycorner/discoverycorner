@@ -178,7 +178,7 @@
                 <div class="form-group">
                     <label class="control-label col-md-1" style="margin-left:65%">Address</label>
                     <div class="col-md-3">
-                        @Html.TextBoxFor(a => a.address, new { @class = "form-control", placeholder = "address" })
+                        @Html.TextBoxFor(a => a.address, new {id="abc", @class = "form-control", placeholder = "address" })
                         @Html.ValidationMessageFor(a => a.address)
                       <!--    <input type="text" class="form-control" required="" placeholder="current address" name="address" /> -->
                     </div>
